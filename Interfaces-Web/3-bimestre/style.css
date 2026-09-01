@@ -1,0 +1,822 @@
+/* =========================================================
+   CLOUDSAW
+   Site sobre Computação em Nuvem
+   Estilo: Mangá / Cyberpunk / Vermelho e Preto
+   ========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #080808;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   2. VARIÁVEIS DE CORES
+   ========================================================= */
+
+:root {
+    --vermelho: #d00000;
+    --vermelho-escuro: #8b0000;
+    --preto: #080808;
+    --preto-card: #111111;
+    --cinza: #1c1c1c;
+    --cinza-claro: #bdbdbd;
+    --branco: #ffffff;
+}
+
+
+/* =========================================================
+   3. BARRA DE NAVEGAÇÃO
+   ========================================================= */
+
+header {
+    background-color: #0b0b0b;
+    border-bottom: 3px solid var(--vermelho);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    padding: 15px 6%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-size: 32px;
+    letter-spacing: 3px;
+
+    color: var(--vermelho);
+
+    text-decoration: none;
+
+    text-shadow:
+        2px 2px 0 #ffffff,
+        4px 4px 0 #000000;
+}
+
+
+/* Menu */
+
+nav ul {
+    display: flex;
+
+    list-style: none;
+
+    gap: 25px;
+}
+
+nav ul li a {
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--vermelho);
+
+    text-shadow:
+        0 0 5px var(--vermelho),
+        0 0 10px var(--vermelho);
+}
+
+
+/* =========================================================
+   4. SEÇÃO PRINCIPAL / HERO
+   ========================================================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-color: var(--preto);
+}
+
+
+/* Efeito de linhas de mangá */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 12px,
+            rgba(255, 255, 255, 0.025) 12px,
+            rgba(255, 255, 255, 0.025) 14px
+        );
+
+    pointer-events: none;
+}
+
+
+/* Conteúdo do Hero */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+}
+
+
+/* Título principal */
+
+.hero h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-size: clamp(70px, 14vw, 160px);
+
+    color: var(--vermelho);
+
+    letter-spacing: 8px;
+
+    line-height: 0.9;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        5px 5px 0 var(--branco),
+        10px 10px 0 #000000;
+
+    animation: aparecer 1s ease;
+}
+
+
+/* Subtítulo */
+
+.hero h2 {
+    margin-top: 25px;
+
+    font-size: clamp(25px, 5vw, 45px);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: 25px auto 0;
+
+    color: var(--cinza-claro);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   5. BOTÕES
+   ========================================================= */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 35px;
+
+    background-color: var(--vermelho);
+
+    border: 2px solid var(--branco);
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+    box-shadow: 5px 5px 0 #000000;
+}
+
+.btn:hover {
+    background-color: var(--branco);
+
+    color: var(--vermelho);
+
+    transform: translate(-3px, -3px);
+
+    box-shadow: 8px 8px 0 var(--vermelho);
+}
+
+
+/* =========================================================
+   6. CONTAINER PRINCIPAL
+   ========================================================= */
+
+.container {
+    width: 90%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+
+/* =========================================================
+   7. TÍTULOS
+   ========================================================= */
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    color: var(--vermelho);
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+
+    text-shadow: 3px 3px 0 #000000;
+}
+
+
+/* Linha abaixo dos títulos */
+
+.title::after {
+    content: "";
+
+    display: block;
+
+    width: 100px;
+
+    height: 5px;
+
+    background-color: var(--branco);
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   8. TEXTOS
+   ========================================================= */
+
+.text {
+    color: #cccccc;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.highlight {
+    color: var(--vermelho);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   9. CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+
+.card {
+    background-color: var(--preto-card);
+
+    border: 2px solid #333333;
+
+    padding: 30px;
+
+    position: relative;
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+
+/* Barra vermelha lateral */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background-color: var(--vermelho);
+
+    transform: scaleY(0);
+
+    transition: 0.3s;
+
+    transform-origin: bottom;
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--vermelho);
+
+    box-shadow: 8px 8px 0 var(--vermelho);
+}
+
+
+.card:hover::before {
+    transform: scaleY(1);
+}
+
+
+/* Título dos cards */
+
+.card h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    color: var(--vermelho);
+
+    font-size: 30px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+
+.card p {
+    color: #bbbbbb;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   10. ÍCONES / NÚMEROS
+   ========================================================= */
+
+.card-number {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    color: #333333;
+
+    font-size: 50px;
+
+    position: absolute;
+
+    right: 15px;
+    top: 5px;
+}
+
+
+/* =========================================================
+   11. BANNER VERMELHO
+   ========================================================= */
+
+.banner {
+    background-color: var(--vermelho);
+
+    color: var(--branco);
+
+    padding: 70px 8%;
+
+    text-align: center;
+
+    transform: skewY(-2deg);
+
+    margin: 40px 0;
+}
+
+
+.banner-content {
+    transform: skewY(2deg);
+}
+
+
+.banner h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-size: clamp(35px, 6vw, 65px);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.banner p {
+    margin-top: 15px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   12. TABELAS
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 40px;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+}
+
+
+th,
+td {
+    padding: 18px;
+
+    border: 1px solid #444444;
+
+    text-align: left;
+}
+
+
+th {
+    background-color: var(--vermelho);
+
+    color: var(--branco);
+
+    text-transform: uppercase;
+}
+
+
+td {
+    background-color: var(--preto-card);
+
+    color: #cccccc;
+}
+
+
+tr:hover td {
+    background-color: #191919;
+}
+
+
+/* =========================================================
+   13. LISTAS
+   ========================================================= */
+
+.lista {
+    margin: 25px 0;
+
+    padding-left: 25px;
+
+    color: #cccccc;
+}
+
+
+.lista li {
+    margin-bottom: 12px;
+}
+
+
+.lista li::marker {
+    color: var(--vermelho);
+}
+
+
+/* =========================================================
+   14. PAINÉIS DE MANGÁ
+   ========================================================= */
+
+.manga-panel {
+    background-color: #eeeeee;
+
+    color: #080808;
+
+    border: 5px solid #000000;
+
+    padding: 30px;
+
+    margin: 40px 0;
+
+    position: relative;
+
+    box-shadow: 10px 10px 0 var(--vermelho);
+}
+
+
+.manga-panel h3 {
+    color: #000000;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-size: 35px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+
+.manga-panel p {
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   15. TEXTO DE IMPACTO
+   ========================================================= */
+
+.impact {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-size: clamp(40px, 8vw, 90px);
+
+    color: var(--branco);
+
+    text-transform: uppercase;
+
+    transform: rotate(-3deg);
+
+    text-shadow:
+        5px 5px 0 var(--vermelho);
+
+    margin: 50px 0;
+}
+
+
+/* =========================================================
+   16. ONOMATOPEIAS
+   ========================================================= */
+
+.onomatopeia {
+    position: absolute;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    color: var(--vermelho);
+
+    font-size: 60px;
+
+    transform: rotate(-10deg);
+
+    opacity: 0.8;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   17. RODAPÉ
+   ========================================================= */
+
+footer {
+    background-color: #050505;
+
+    border-top: 2px solid #333333;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #777777;
+}
+
+
+footer strong {
+    color: var(--vermelho);
+}
+
+
+/* =========================================================
+   18. ANIMAÇÕES
+   ========================================================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   19. EFEITO GLITCH
+   ========================================================= */
+
+.glitch {
+    position: relative;
+
+    animation: glitch 3s infinite;
+}
+
+
+@keyframes glitch {
+
+    0% {
+        transform: translate(0);
+    }
+
+    95% {
+        transform: translate(0);
+    }
+
+    96% {
+        transform: translate(-3px, 2px);
+    }
+
+    97% {
+        transform: translate(3px, -2px);
+    }
+
+    98% {
+        transform: translate(-2px, 1px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+
+}
+
+
+/* =========================================================
+   20. RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 15px 4%;
+    }
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 12px;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .container {
+        width: 88%;
+
+        padding: 60px 0;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   21. CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav ul li a {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .banner {
+        padding: 50px 20px;
+    }
+
+}
